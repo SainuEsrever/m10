@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { Bai100Component } from './components/bai100/bai100.component';
 import { Bai101Component } from './components/bai101/bai101.component';
 import { Bai102Component } from './components/bai102/bai102.component';
@@ -20,32 +17,38 @@ import { Bai120Component } from './components/bai120/bai120.component';
 import { Bai122Component } from './components/bai122/bai122.component';
 import { UploadComponent } from './components/upload/upload.component';
 
+
+const routes: Routes = [
+  { path: 'bai100', component: Bai100Component },
+  { path: 'bai101', component: Bai101Component },
+  { path: 'bai102', component: Bai102Component },
+  { path: 'bai103', component: Bai103Component },
+  { path: 'bai104', component: Bai104Component },
+  { path: 'bai105', component: Bai105Component },
+  { path: 'bai106', component: Bai106Component },
+  { path: 'bai107', component: Bai107Component },
+
+  { path: 'bai114', component: Bai114Component },
+  { path: 'bai116', component: Bai116Component },
+
+  { path: 'bai118', component: Bai118Component },
+
+  { path: 'bai120', component: Bai120Component },
+
+  { path: 'bai122', component: Bai122Component },
+
+
+  { path: 'upload', component: UploadComponent },
+
+  // Thêm các route khác tại đây
+];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    Bai100Component,
-    Bai101Component,
-    Bai102Component,
-    Bai103Component,
-    Bai104Component,
-    Bai105Component,
-    Bai106Component,
-    Bai107Component,
-    Bai114Component,
-    Bai116Component,
-    Bai118Component,
-    Bai120Component,
-    Bai122Component,
-    UploadComponent
-  ],
+  declarations: [],
+  exports: [RouterModule],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ]
 })
-export class AppModule { }
+export class AppRoutingModule {}

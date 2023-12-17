@@ -1,0 +1,34 @@
+<p>bai104 works!</p>
+
+{{errMessage}}
+
+<h3 class="text-center text-white bg-dark p-3">Data Entry</h3>
+<div class="container">
+  <h3>Số Entry : {{data.count}}</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>API</th>
+        <th>Description</th>
+        <th>Auth</th>
+        <th>HTTPS</th>
+        <th>Cors</th>
+        <th>Link</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+       
+            <tr *ngFor="let d of data.entries">
+                <td>{{d.API}}</td>
+                <td>{{d.Description}}</td>
+                <td>{{d.Auth}}</td>
+                <td>{{d.HTTPS}}</td>
+                <td>{{d.Cors}}</td>
+                <td>{{d.Link}}</td>
+                <td>{{d.Category}}</td>
+            </tr>
+
+    </tbody>
+  </table>
+
